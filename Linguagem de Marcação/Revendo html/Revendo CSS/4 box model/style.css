@@ -1,0 +1,11 @@
+.caixa{
+    background-color: black;
+    padding: 20px;
+    margin: 20px solid;
+    border: 5px solid blue;
+    width: 600px;
+}
+p {
+    color: violet;
+    font-size: large;
+}
