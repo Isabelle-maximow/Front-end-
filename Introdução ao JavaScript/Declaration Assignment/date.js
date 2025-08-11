@@ -10,6 +10,7 @@ console.log("Ano", dataNasc.getFullYear()); // pegar o ano
 const today = new Date(); // data de hj
 console.log("Idade: ", today.getFullYear() -dataNasc.getFullYear());
 
-
-
+let data = new Date();
+console.log("dia da semana: ", data.getDate())
+console.log("dia da mes: ", data.getDate(15))
 
