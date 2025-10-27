@@ -22,69 +22,99 @@ console.log(document.getElementsByClassName("box"));
 // o Adicione tudo isso dentro do body.
 
 const h2 = document.createElement("h2");
-h2.textContent = "list of tasks";
+h2.textContent = "lista de tarefas";
 document.body.appendChild(h2);
 
 const ul = document.createElement("ul");
 const lil = document.createElement("li");
-lil.textContent = "Study HTML"
+lil.textContent = "estudar HTML"
 ul.appendChild(lil);
 
 const lil2 = document.createElement("li");
-lil2.textContent = "Study CSS"
+lil2.textContent = "estudar CSS"
 ul.appendChild(lil2);
 
 const lil3 = document.createElement("li");
-lil3.textContent = "Study JavaScript"
+lil3.textContent = "estudar JavaScript"
 ul.appendChild(lil3);
 
 document.body.appendChild(ul);
 
 
-// INTERAGINDO COM EVENTOS
-// 4. Crie um botão "Trocar Cor".
-// Ao clicar nele:
-// o O título <h1> deve trocar de cor (ex: vermelho, verde, azul) de forma
-// alternada.
-// o Use addEventListener("click", ...) para tratar o evento.
+// 4. Selecione todos os <li> da lista criada.
+// Altere a cor do texto para verde escuro.
+// Aumente o tamanho da fonte para 20px.
+// Dica: use querySelectorAll() e um laço for...of para percorrer os itens.
 
-const button = document.createElement("button");
-button.type = "button"; // ensure it's selectable by attribute
-button.textContent = "change color";
-document.body.appendChild(button)
-
-const h1 = document.getElementById("titulo");
-let colors = ["red", "green", "blue"];
-let currentColorIndex = 0
-
-if (button && h1) {
-    button.addEventListener("click", function(){
-        h1.style.color = colors[currentColorIndex];
-        currentColorIndex = (currentColorIndex + 1) % colors.length;
-    });
-} else {
-    console.warn('Button or h1 not found - skipping color toggle setup.');
+const allLi = document.querySelectorAll("li");
+for (const li of allLi) {
+    li.style.color = "darkgreen";
+    li.style.fontSize = "20px";
 }
 
+// ADICIONANDO UM NOVO PARÁGRAFO
+// 5. Crie um novo parágrafo (<p>) abaixo da lista com o texto:
+// "Essas são as principais tarefas de estudo."
+// Altere o estilo:
+// Cor do texto: marrom;
+// Estilo da fonte: itálico.
 
-// SELETORES MODERNOS
-// 5. Use querySelector() e querySelectorAll() para:
-// o Selecionar o primeiro <li> e deixá-lo sublinhado;
-// o Selecionar todos os <li> e alterar a cor de fundo para cinza claro;
-// o Selecionar o botão pelo atributo (ex: button[type="button"]) e alterar
-// seu texto para "Cliquei aqui!".
+const p = document.createElement("p");
+p.textContent = "Essas são as principais tarefas de estudo";
+p.style.color = "brown";
+p.style.fontStyle = "italic";
+document.body.appendChild(p);
 
-// deixar o li sublinhado:
-const li1 = document.querySelector("li");
-if (li1) li1.style.textDecoration = "underline"
+// CRIANDO UMA NOVA SEÇÃO
+// 6. Crie uma <section> e dentro dela:
+// Um <h2> com o texto "Sobre o Curso";
+// Dois <p> com textos explicativos, por exemplo:
+// "O curso aborda fundamentos de programação e web."
+// "Aprendemos sobre HTML, CSS e manipulação do DOM com JavaScript."
+// Adicione essa seção ao final do body.
 
-// alterando a cor do fundo do li:
-const allLi = document.querySelectorAll("li");
-allLi.forEach(function(li){
-    li.style.backgroundColor = "lightgray";
-});
+const section = document.createElement("section");
 
-// selceionando o botao plo atrib. e ,mudando txt:
-const botao = document.querySelector('button[type="button"]');
-if (botao) botao.textContent = "i clicked here!"
+const h2Section = document.createElement("h2");
+h2Section.textContent = "Sobre o curso";
+section.appendChild(h2Section);
+
+// ESTILIZANDO A SEÇÃO
+// 7. Aplique estilos à seção criada:
+// Fundo com cor clara (ex: #e0f7fa);
+// Borda azul (2px solid #0097a7);
+// Espaçamento interno (padding: 10px);
+// Margem superior (margin-top: 20px);
+// Título e parágrafos com tons de azul esverdeado.
+
+const p1 = document.createElement("p");
+p1.textContent = "O curso aborda fundamentos de programação e web";
+section.appendChild(p1);
+const p2 = document.createElement("p");
+p2.textContent = "Aprendemos sobre HTML, CSS e manipulação do DOM com JavaScript";
+section.appendChild(p2);
+section.style.backgroundColor = "#e0f7fa";
+section.style.border = "2px solid #0097a7";
+section.style.padding = "10px";
+section.style.marginTop = "20px";
+h2Section.style.color = "#00695c";
+p1.style.color = "#00897b";
+p2.style.color = "#00897b";
+document.body.appendChild(section);
+
+
+// EXPLORANDO A ÁRVORE DOM
+// 8. Crie um laço que percorra todos os elementos da página usando
+// querySelectorAll("*").
+// Para cada elemento encontrado, mostre no console o nome da sua tag.
+// Exemplo de saída:
+// Elemento encontrado: H1
+// Elemento encontrado: P
+// Elemento encontrado: DIV
+
+const allElements = document.querySelectorAll("*");
+for (const element of allElements) {
+    console.log("Elemento encontrado: " + element.tagName);
+}
+
 
