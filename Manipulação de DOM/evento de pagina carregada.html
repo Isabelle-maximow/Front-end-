@@ -1,0 +1,38 @@
+<!-- eventos sao funçoes executadas a partir de um evento externo
+ ex: clique, carregamento de pag, abertura de doc e etc -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const el1 = document.getElementById("title");
+            console.log(el1);
+            // nesse momento o navegador ainda n leu o h1,
+            // ent o getElemenyarypipi n encontra nada, retornando nu
+        })
+    </script>
+    <script>
+        const el1 = document.getElementById("title");
+        console.log(el1);
+    // nesse momento o navegador ainda n leu o H1
+    // ent o getElementByid("title") n encontrada nada, retornando nulo
+    </script>
+    <h1 id="title">minha pagina</h1>
+    <script>
+        const el2 = document.getElementById("title");
+        console.log(el2);
+    // aqui o h2 ja foi lido e add  ao DOM 
+    // ent ele retorna o elemento corretamente
+    </script>
+
+<!-- para ent corrigir isso, usamos o DOMContentloaded no al1,
+ isso garente que o script so rode dps que toda estrutura HTML estiver pronta -->
+    
+</body>
+</html>

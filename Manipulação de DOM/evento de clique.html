@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button> clique aqui </button>
+    <a href="#"> clique aqui </a>
+
+  <script>
+    const button = document.querySelectorAll("button")
+    button.addEventListener("click", () => {
+      console.log("clicou no botao");
+    });
+    const hyperlink = document.querySelectorAll("a");
+    let cont = 0 
+
+    hyperlink.addEventListener("click", () => {
+        cont ++
+        console.log(`cliques: ${cont}`);
+
+        if (cont >= 5){
+            alert("vc atingiu 5 cliques! a oag sera recarregada");
+            location.reload();
+        }
+    });
+  </script>
+
+  <p id="contador">Cliques: 0</p>
+  <script>
+    const contadortexto = document.querySelector("#contador");
+    contadortexto.textContent = `cliques: ${contador}`;
+
+  </script>
+</body>
+</html>

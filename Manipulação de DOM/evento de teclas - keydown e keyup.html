@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"/>
+
+    <script>
+        const inputE1 = document.querySelector("input [type=text]");
+        inputE1.addEventListener("keydown", () => {
+            console.log("apertou tecla")
+        });
+
+        // paea uma tecla espciefica:
+        const tecla = document.querySelector("input [type=text]");
+        tecla.addEventListener("keydown", () => {
+            if (event.key === "s"){
+                console.log("vc apertou o s")
+            }
+        });
+
+        // sabr qual tecla tocou:
+        inputE1;addEventListener("keyup", {event} => {
+            if (event.key === "enter"){
+                console.log("aoertou o enter");
+                alert("cdastro realizado")
+                location.reload();
+            }        
+        });
+    </script>
+</body>
+</html>
