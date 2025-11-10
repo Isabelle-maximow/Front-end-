@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        <button id="solicitar"> realizar pedido</button>
+        <div id="status">nenhum pedido feito ainda...</div>
+
+        <script>
+            const statusEl = document.querySelector("status");
+            const botaoEl = document.querySelector("solicitar");
+
+            function fazerPedido (){
+                statusEl.innerHTML = "pedido feito! Preparando..."
+                botaoEl.textContent = "aguardando..."
+            // criando promise:
+            const promessa = new Promise((resolve, reject) => {
+                setTimeout( () => {
+                    const sucess = Math.random() > 0.5;
+                    if (sucess) {
+                        resolve ("pedido pronto!");
+                    } else {
+                        reject ("pedido cancelado!")
+                    }
+                }, 2000);
+            });
+        }
+            botaoEl.addEventListener("click", fazerPedido);
+        </script>
+    </h2>
+</body>
+</html>
