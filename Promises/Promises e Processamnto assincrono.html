@@ -27,7 +27,26 @@
                         reject ("pedido cancelado!")
                     }
                 }, 2000);
-            });
+            })
+            // promesa
+            .then((mensagem) => {
+                statusEl.innerHTML= `< span class= "ok"> ${mensagem}</span>`
+                statusEl.style.color = "green";
+                statusEl.style.fontsize = "25px";
+                statusEl.style.fontWeight = "bold";
+
+            })
+            .cath((error) => {
+                statusEl.innerHTML= `< span class= "ok"> ${error}</span>`
+                statusEl.style.color = "red";
+                statusEl.style.fontsize = "25px";
+                statusEl.style.fontWeight = "bold";
+
+            })
+            .finally(() => {
+                botaoEl.disable = false;
+                botaoEl.textContent = "fazer outro pedido"
+            })
         }
             botaoEl.addEventListener("click", fazerPedido);
         </script>
